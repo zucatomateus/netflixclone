@@ -1,5 +1,6 @@
 import "./App.css";
 import Row from "./components/Row";
+import categories from "./Api";
 
 function App() {
   return (
@@ -7,7 +8,15 @@ function App() {
       {/* Navbar */}
       {/* To Rated */}
       {/* Originals */}
-      <Row />
+      {categories.map((category) => {
+        return <Row 
+        key={category} 
+        title={category.title} 
+        path={category.path} />;
+
+      })}
     </div>
-  )
-}
+  );
+} 
+
+export default App;
