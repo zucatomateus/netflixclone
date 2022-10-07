@@ -40,11 +40,8 @@ const categories = [
 
 export const getMovies = async (path) => {
     try {
-<<<<<<< HEAD
-    let url = `https://api.themoviedb.org/3${path}`;
-=======
-    let url = 'https://api.themoviedb.org/3${path}';
->>>>>>> b55964899f85775a7e6fb3e08f4df66dca0557b3
+	let url = `https://api.themoviedb.org/3${path}`;
+
     const response = await fetch(url);
     return await response.json();
   } catch (error) {
