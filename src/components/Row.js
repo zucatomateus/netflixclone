@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { getMovies } from '../Api';
 
 const imageHost = "http://image.tmdb.org/t/p/original/";
-function Row ({ title, path }) {
+function Row ({ title, path, isLarge }) {
     const [movies, setMovies] = React.useState([]);
 
     const fetchMovies = async (_path ) => {
@@ -28,7 +28,7 @@ function Row ({ title, path }) {
             {movies?.map((movie) => {
                 return (
                     <img
-                    className="movie-card"
+                        className={`movie-card ${isLarge && "movie-card-large"}`} 
                     key={movie.id}
                     src={`${imageHost}${movie.poster_path}`}
                     alt={movie.name}
