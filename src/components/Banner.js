@@ -25,10 +25,33 @@ export default function Banner() {
         fecthRandomMovie();
     }, []);
   
-    return <header className="banner-container" syle={{
+    return (
+    
+    <header 
+        className="banner-container" 
+        syle={{
         backgroundSize: "cover",
         backgroundImage: `url("http://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
         roundPosition: "center-center"
-    }}
-    />
-}
+        }}
+    >
+
+    <div className="banner-content">
+        <h1 className="banner-title">
+            {movie?.title || movie?.name || movie?.original_name }
+        </h1>
+
+        <div className="banner-buton-container">
+            <div className="banner-botton">
+
+            </div>  
+            <div className="banner-botton">
+                    
+            </div>
+        </div>
+        <div className="banner-description">
+
+        </div>
+    </div>
+    </header>
+)};
